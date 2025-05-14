@@ -115,3 +115,77 @@ body {
 .card-email{
   padding-bottom: 5px;
 }
+@media (max-width: 768px) {
+  body {
+      padding: 20px;
+      background-image: none;
+      background-color: #333;
+  }
+
+  .container {
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .controls {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+      padding: 15px;
+  }
+
+  .card-container {
+      width: 100%;
+      padding-left: 0;
+  }
+
+  .card {
+      max-width: 100%;
+      height: 180px;
+  }
+
+  .controls label,
+  .controls input,
+  .controls select,
+  .controls button,
+  .controls div {
+      margin-bottom: 8px;
+      width: 100%;
+  }
+
+  button {
+      padding: 8px;
+  }
+
+  input, select {
+      padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      height: 160px;
+      padding: 15px;
+  }
+
+  .card img {
+      width: 60px;
+      height: 60px;
+  }
+
+  .card-name {
+      font-size: 16px;
+  }
+
+  .card-title,
+  .card-phone,
+  .card-email {
+      font-size: 14px;
+  }
+
+  .controls h2 {
+      font-size: 18px;
+  }
+}

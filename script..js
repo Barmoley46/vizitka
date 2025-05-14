@@ -106,7 +106,3 @@ $(document).ready(function() {
 
     });
 });
-const imgElements = document.querySelectorAll('img');
-    imgElements.forEach(img => {
-      img.removeAttribute('alt');
-    });

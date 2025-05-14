@@ -1,88 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Создатель Визиток</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
-    <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Создатель Визиток</title>
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="controls">
-                <h2>Настройки</h2>
-                <button id="upload-photo">Загрузить фото</button>
-                <input type="file" id="photo-input" style="display: none;">
-                <div id="photo-preview"></div>
-        
-                <label for="card-bg-image">Загрузить фон визитки:</label>
-                <input type="file" id="card-bg-image" style="display: none;">
-                <button id="upload-card-bg">Выбрать файл</button>
-                <div id="card-bg-preview"></div>
-        
-                <label for="bg-color">Цвет фона:</label>
-                <input type="color" id="bg-color" value="#ffffff">
-        
-                <label for="font-family">Шрифт:</label>
-                <select id="font-family">
-                    <option value="Arial">Arial</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
-        
-                <label for="text-color">Цвет текста:</label>
-                <input type="color" id="text-color" value="#000000">
-
-                <label for="text-color">Цвет Имени:</label>
-                <input type="color" id="name-color" value="#000000">
-        
-                <label for="name">Имя:</label>
-                <input type="text" id="name" value="Ваше Имя">
-        
-                <label for="title">Должность:</label>
-                <input type="text" id="title" value="Ваша Должность">
-        
-                <label for="phone">Телефон:</label>
-                <input type="text" id="phone" value="+7 (XXX) XXX-XX-XX">
-        
-                <label for="email">Email:</label>
-                <input type="text" id="email" value="email@example.com">
-        
-                <label for="avatar-shape">Форма аватарки:</label>
-                <select id="avatar-shape">
-                    <option value="circle">Круг</option>
-                    <option value="square">Квадрат</option>
-                    <option value="rounded">Скругленный квадрат</option>
-                </select>
-        
-                <button id="save-card">Сохранить визитку</button>
-            </div>
-            <div class="card-container">
-                <div class="card" id="card">
-                    <img id="card-photo" src="">
-                    <div class="card-name" id="name-color">Ваше Имя</div>
-                    <div class="card-title">Ваша Должность</div>
-                    <div class="card-phone">+7 (XXX) XXX-XX-XX</div>
-                    <div class="card-email">email@example.com</div>
-                </div>
+    <div class="container">
+        <div class="controls">
+            <h2>Настройки</h2>
+            <button id="upload-photo">Загрузить фото</button>
+            <input type="file" id="photo-input" style="display: none;">
+            <div id="photo-preview"></div>
+    
+            <label for="card-bg-image">Загрузить фон визитки:</label>
+            <input type="file" id="card-bg-image" style="display: none;">
+            <button id="upload-card-bg">Выбрать файл</button>
+            <div id="card-bg-preview"></div>
+    
+            <label for="bg-color">Цвет фона:</label>
+            <input type="color" id="bg-color" value="#ffffff">
+    
+            <label for="font-family">Шрифт:</label>
+            <select id="font-family">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+    
+            <label for="text-color">Цвет текста:</label>
+            <input type="color" id="text-color" value="#000000">
+            <label for="text-color">Цвет Имени:</label>
+            <input type="color" id="name-color" value="#000000">
+    
+            <label for="name">Имя:</label>
+            <input type="text" id="name" value="Ваше Имя">
+    
+            <label for="title">Должность:</label>
+            <input type="text" id="title" value="Ваша Должность">
+    
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" value="+7 (XXX) XXX-XX-XX">
+    
+            <label for="email">Email:</label>
+            <input type="text" id="email" value="email@example.com">
+    
+            <label for="avatar-shape">Форма аватарки:</label>
+            <select id="avatar-shape">
+                <option value="circle">Круг</option>
+                <option value="square">Квадрат</option>
+                <option value="rounded">Скругленный квадрат</option>
+            </select>
+    
+            <button id="save-card">Сохранить визитку</button>
+        </div>
+        <div class="card-container">
+            <div class="card" id="card">
+                <img id="card-photo" src="">
+                <div class="card-name" id="name-color">Ваше Имя</div>
+                <div class="card-title">Ваша Должность</div>
+                <div class="card-phone">+7 (XXX) XXX-XX-XX</div>
+                <div class="card-email">email@example.com</div>
             </div>
         </div>
-    <script src="script.js"></script>
-    </body>
-    </html>
-<script src="jquery-3.7.1.min.js"></script>
-<script src="script..js"></script>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
